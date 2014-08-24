@@ -170,14 +170,14 @@ class ImageWorkshopLayer
      * $position: http://phpimageworkshop.com/doc/22/corners-positions-schema-of-an-image.html
      *
      * @param integer $layerLevel
-     * @param ImageWorkshop $layer
+     * @param ImageWorkshopLayer $layer
      * @param integer $positionX
      * @param integer $positionY
      * @param string $position
      *
      * @return array
      */
-    public function addLayer($layerLevel, $layer, $positionX = 0, $positionY = 0, $position = 'LT')
+    public function addLayer($layerLevel, ImageWorkshopLayer $layer, $positionX = 0, $positionY = 0, $position = 'LT')
     {
         return $this->indexLayer($layerLevel, $layer, $positionX, $positionY, $position);
     }
@@ -189,14 +189,14 @@ class ImageWorkshopLayer
      *
      * $position: http://phpimageworkshop.com/doc/22/corners-positions-schema-of-an-image.html
      *
-     * @param ImageWorkshop $layer
+     * @param ImageWorkshopLayer $layer
      * @param integer $positionX
      * @param integer $positionY
      * @param string $position
      *
      * @return array
      */
-    public function addLayerOnTop($layer, $positionX = 0, $positionY = 0, $position = 'LT')
+    public function addLayerOnTop(ImageWorkshopLayer $layer, $positionX = 0, $positionY = 0, $position = 'LT')
     {
         return $this->indexLayer($this->highestLayerLevel + 1, $layer, $positionX, $positionY, $position);
     }
@@ -208,14 +208,14 @@ class ImageWorkshopLayer
      *
      * $position: http://phpimageworkshop.com/doc/22/corners-positions-schema-of-an-image.html
      *
-     * @param ImageWorkshop $layer
+     * @param ImageWorkshopLayer $layer
      * @param integer $positionX
      * @param integer $positionY
      * @param string $position
      *
      * @return array
      */
-    public function addLayerBelow($layer, $positionX = 0, $positionY = 0, $position = 'LT')
+    public function addLayerBelow(ImageWorkshopLayer $layer, $positionX = 0, $positionY = 0, $position = 'LT')
     {
         return $this->indexLayer(1, $layer, $positionX, $positionY, $position);
     }
@@ -1755,7 +1755,7 @@ class ImageWorkshopLayer
      *
      * @return array
      */
-    protected function indexLayer($layerLevel, $layer, $positionX = 0, $positionY = 0, $position)
+    protected function indexLayer($layerLevel, ImageWorkshopLayer $layer, $positionX = 0, $positionY = 0, $position)
     {
         // Choose an id for the added layer
         $layerId = $this->lastLayerId + 1;
